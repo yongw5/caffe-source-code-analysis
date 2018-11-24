@@ -24,7 +24,7 @@
 - SGD with momentum  
   <img src="http://latex.codecogs.com/svg.latex?\Delta{w_{k,l}^{t+1}}=-\eta\frac{\partial{L}}{\partial{w_{k,l}}}-\alpha\Delta{w_{k,l}^{t}}" border="0"/>  
 - SGD with weight decay  
-  <img src="http://latex.codecogs.com/svg.latex?\Delta{w_{k,l}^{t+1}}=-\eta\frac{\partial{L}}{\partial{w_{k,l}}}-\lambda\eta{w_{k,l}^{t}}" border="0"/>  
+  <img src="http://latex.codecogs.com/svg.latex?\Delta{w_{k,l}^{t+1}}=-\eta\frac{\partial{L}}{\partial{w_{k,l}}}-\eta\lambda{w_{k,l}^{t}}" border="0"/>  
 - Combine momentum and weight decay  
   <img src="http://latex.codecogs.com/svg.latex?\Delta{w_{k,l}^{t+1}}=-\eta\frac{\partial{L}}{\partial{w_{k,l}}}-\eta\lambda{w_{k,l}^{t}}-\alpha\Delta{w_{k,l}^{t}}" border="0"/>  
 where, <img src="http://latex.codecogs.com/svg.latex?\eta" border="0"/> is learning rate; <img src="http://latex.codecogs.com/svg.latex?\alpha" border="0"/> is momentum and usually set to 0.9; <img src="http://latex.codecogs.com/svg.latex?\lambda" border="0"/> is weight decay
