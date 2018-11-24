@@ -1,6 +1,6 @@
 # adam_solver
 - [Adam Algorithm](#Adam-Algorithm)
-- [SGDSolver()定义](#SGDSolver()定义)
+- [AdamSolver定义](#AdamSolver定义)
 - [ComputeUpdateValue](#ComputeUpdateValue)
 ## Adam Algorithm  
 - Algorithm  
