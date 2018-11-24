@@ -192,10 +192,12 @@ void SGDSolver<Dtype>::Normalize(int param_id) {
 }
 ```
 ## Regularize
-- L1 Regularization
-  $$\frac{\partial R(W)}{\partial w_{k,l}} = sign(w_{k, l})$$
-- L2 Regularization
-  $$\frac{\partial R(W)}{\partial w_{k,l}} = 2w_{k, l}$$
+- L1 Regularization  
+    <img src="http://latex.codecogs.com/svg.latex?R(W)=\Sigma_k\Sigma_l|w_{k,l}|" border="0"/>  
+    <img src="http://latex.codecogs.com/svg.latex?\frac{\partial{R(W)}}{\partial{w_{k,l}}}=sign(w_{k,l})" border="0"/>  
+- L2 Regualrization  
+    <img src="http://latex.codecogs.com/svg.latex?R(W)=\Sigma_k\Sigma_l{w_{k,l}^2}" border="0"/>  
+    <img src="http://latex.codecogs.com/svg.latex?\frac{\partial{R(W)}}{\partial{w_{k,l}}}=2w_{k,l}" border="0"/> 
 ```
 template <typename Dtype>
 void SGDSolver<Dtype>::Regularize(int param_id) {
