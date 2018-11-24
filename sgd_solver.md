@@ -9,42 +9,30 @@
 - ComputeUpdateValue
 ## Stochastic Gradient Descent
 - Basic
-  - Without Regularization
-  $$\begin{array}{ccc}
-  L(W)=\frac{1}{N}\sum_{i=1}^{N}{L_i(f(x_i,W),y_i)}\\
-  \\
-  w_{k,l}^{t+1}=w_{k,l}^{t}+\Delta{w_{k,l}^{t+1}}\\
-  \\
-  \Delta{w_{k,l}^{t+1}}=-\eta\frac{\partial L}{\partial w_{k,l}}
-  \end{array}$$
-  - With Regularization
-  $$L(W) = \frac{1}{N} \sum_{i=1}^{N}{L_i(f(x_i, W), y_i)} + \lambda R(W)$$
-  - L1 Regularization
-  $$\begin{array}{ccc}
-  R(W) = \Sigma_k \Sigma_l |w_{k, l}|\\\\
-  \frac{\partial R(W)}{\partial w_{k,l}} = sign(w_{k, l})
-  \end{array}$$
-  - L2 Regualrization
-  $$\begin{array}{ccc}
-  R(W) = \Sigma_k \Sigma_l w_{k, l}^2 \\\\
-  \frac{\partial R(W)}{\partial w_{k,l}} = 2w_{k, l}
-  \end{array}$$
-- SGD with momentum
-  $$\Delta{w_{k,l}^{t+1}} = - \eta \frac{\partial L}{\partial w_{k,l}} - \alpha \Delta{w_{k,l}^{t}}$$
-- SGD with weight decay 
-  $$\Delta{w_{k,l}^{t+1}} = - \eta \frac{\partial L}{\partial w_{k,l}} - \lambda \eta w_{k,l}^{t}$$
-- Combine momentum and weight decay
-  $$\Delta{w_{k,l}^{t+1}} = - \eta \frac{\partial L}{\partial w_{k,l}} - \alpha \Delta{w_{k,l}^{t}} - \lambda \eta w_{k,l}^{t}$$  
-where, $\eta$ is learning rate; $\alpha$ is momentum and usually set to 0.9; $\lambda$ is weight decay
+  - Without Regularization  
+    <img src="http://latex.codecogs.com/svg.latex?L(W)=\frac{1}{N}\sum_{i=1}^{N}{L_i(f(x_i,W),y_i)}" border="0"/>  
+    <img src="http://latex.codecogs.com/svg.latex?w_{k,l}^{t+1}=w_{k,l}^{t}+\Delta{w_{k,l}^{t+1}}" border="0"/>  
+    <img src="http://latex.codecogs.com/svg.latex?\Delta{w_{k,l}^{t+1}}=-\eta\frac{\partial{L}}{\partial{w_{k,l}}}" border="0"/>  
+  - With Regularization  
+    <img src="http://latex.codecogs.com/svg.latex?L(W)=\frac{1}{N}\sum_{i=1}^{N}{L_i(f(x_i,W),y_i)}+\lambda{R(W)}" border="0"/>  
+  - L1 Regularization  
+    <img src="http://latex.codecogs.com/svg.latex?R(W)=\Sigma_k\Sigma_l|w_{k,l}|" border="0"/>  
+    <img src="http://latex.codecogs.com/svg.latex?\frac{\partial{R(W)}}{\partial{w_{k,l}}}=sign(w_{k,l})" border="0"/>  
+  - L2 Regualrization  
+    <img src="http://latex.codecogs.com/svg.latex?R(W)=\Sigma_k\Sigma_l{w_{k,l}^2}" border="0"/>  
+    <img src="http://latex.codecogs.com/svg.latex?\frac{\partial{R(W)}}{\partial{w_{k,l}}}=2w_{k,l}" border="0"/>  
+- SGD with momentum  
+  <img src="http://latex.codecogs.com/svg.latex?\Delta{w_{k,l}^{t+1}}=-\eta\frac{\partial{L}}{\partial{w_{k,l}}}-\alpha\Delta{w_{k,l}^{t}}" border="0"/>  
+- SGD with weight decay  
+  <img src="http://latex.codecogs.com/svg.latex?\Delta{w_{k,l}^{t+1}}=-\eta\frac{\partial{L}}{\partial{w_{k,l}}}-\lambda\eta{w_{k,l}^{t}}" border="0"/>  
+- Combine momentum and weight decay  
+  <img src="http://latex.codecogs.com/svg.latex?\Delta{w_{k,l}^{t+1}}=-\eta\frac{\partial{L}}{\partial{w_{k,l}}}-\alpha\Delta{w_{k,l}^{t}}-\lambda\eta{w_{k,l}^{t}}" border="0"/>  
+where, <img src="http://latex.codecogs.com/svg.latex?\eta" border="0"/> is learning rate; <img src="http://latex.codecogs.com/svg.latex?\alpha" border="0"/> is momentum and usually set to 0.9; <img src="http://latex.codecogs.com/svg.latex?\lambda" border="0"/> is weight decay
 - SGD Solver Function
-  $$\begin{array}{ccc}
-  w_{k,l}^{t+1} = w_{k,l}^{t} - \eta \frac{\partial L}{\partial w_{k,l}} - \alpha \Delta{w_{k,l}^{t}} - \lambda \eta w_{k,l}^{t} \\ \\
-  w_{k,l}^{t+1} = w_{k,l}^{t} - ComputeUpdateValue(param_{id}, rate) \\ \\
-  ComputeUpdateValue(param_{id}, rate) = \eta(\frac{\partial L}{\partial w_{k,l}} + \lambda w_{k,l}^{t}) + \alpha \Delta{w_{k,l}^{t}} \\\\
-  Regularize(param_{id}) = \frac{\partial L}{\partial w_i} + \lambda w_{k,l}^{t} \\\\
-  ComputeUpdateValue(param_{id}, rate) = \eta Regularize(param_{id}) + \alpha \Delta{w_{k,l}^{t}}
-  \end{array}$$
-
+  <img src="http://latex.codecogs.com/svg.latex?w_{k,l}^{t+1}=w_{k,l}^{t}-\eta\frac{\partial{L}}{\partial{w_{k,l}}}-\alpha\Delta{w_{k,l}^{t}}-\lambda\eta{w_{k,l}^{t}}" border="0"/>  
+  <img src="http://latex.codecogs.com/svg.latex?w_{k,l}^{t+1}=w_{k,l}^{t}-ComputeUpdateValue(param_{id},rate)" border="0"/>  
+  <img src="http://latex.codecogs.com/svg.latex?Regularize(param_{id})=\frac{\partial{L}}{\partial{w_i}}+\lambda{w_{k,l}^{t}}" border="0"/>  
+  <img src="http://latex.codecogs.com/svg.latex?ComputeUpdateValue(param_{id},rate)=\eta{Regularize(param_{id})}+\alpha\Delta{w_{k,l}^{t}}" border="0"/>  
 ## SGDSolver()定义
 ```
 template <typename Dtype>
