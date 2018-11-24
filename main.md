@@ -1,7 +1,7 @@
 # caffe.cpp
-- Google Gflags
-- RegisterBrewFunction
-- train()
+- [Google Gflags](#Google-Gflags的使用)
+- [RegisterBrewFunction](#RegisterBrewFunction)
+- [train()](#train())
 
 ## Google Gflags的使用
 - 定义变量  
