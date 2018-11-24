@@ -19,8 +19,8 @@
     <img src="http://latex.codecogs.com/svg.latex?R(W)=\Sigma_k\Sigma_l|w_{k,l}|" border="0"/>  
     <img src="http://latex.codecogs.com/svg.latex?\frac{\partial{R(W)}}{\partial{w_{k,l}}}=sign(w_{k,l})" border="0"/>  
   - L2 Regualrization  
-    <img src="http://latex.codecogs.com/svg.latex?R(W)=\Sigma_k\Sigma_l{w_{k,l}^2}" border="0"/>  
-    <img src="http://latex.codecogs.com/svg.latex?\frac{\partial{R(W)}}{\partial{w_{k,l}}}=2w_{k,l}" border="0"/>  
+    <img src="http://latex.codecogs.com/svg.latex?R(W)=\frac{1}{2}\Sigma_k\Sigma_l{w_{k,l}^2}" border="0"/>  
+    <img src="http://latex.codecogs.com/svg.latex?\frac{\partial{R(W)}}{\partial{w_{k,l}}}=w_{k,l}" border="0"/>  
 - SGD with momentum  
   <img src="http://latex.codecogs.com/svg.latex?\Delta{w_{k,l}^{t+1}}=-\eta\frac{\partial{L}}{\partial{w_{k,l}}}-\alpha\Delta{w_{k,l}^{t}}" border="0"/>  
 - SGD with weight decay  
@@ -71,6 +71,7 @@ class SGDSolver : public Solver<Dtype> {
 ```
 ## GetLearningRate
 返回当前迭代次数的学习率  
+
 |lr policies|return value|  
 |:---|:---|  
 |fixed|base_lr|  
@@ -196,8 +197,8 @@ void SGDSolver<Dtype>::Normalize(int param_id) {
     <img src="http://latex.codecogs.com/svg.latex?R(W)=\Sigma_k\Sigma_l|w_{k,l}|" border="0"/>  
     <img src="http://latex.codecogs.com/svg.latex?\frac{\partial{R(W)}}{\partial{w_{k,l}}}=sign(w_{k,l})" border="0"/>  
 - L2 Regualrization  
-    <img src="http://latex.codecogs.com/svg.latex?R(W)=\Sigma_k\Sigma_l{w_{k,l}^2}" border="0"/>  
-    <img src="http://latex.codecogs.com/svg.latex?\frac{\partial{R(W)}}{\partial{w_{k,l}}}=2w_{k,l}" border="0"/> 
+    <img src="http://latex.codecogs.com/svg.latex?R(W)=\frac{1}{2}\Sigma_k\Sigma_l{w_{k,l}^2}" border="0"/>  
+    <img src="http://latex.codecogs.com/svg.latex?\frac{\partial{R(W)}}{\partial{w_{k,l}}}=w_{k,l}" border="0"/> 
 ```
 template <typename Dtype>
 void SGDSolver<Dtype>::Regularize(int param_id) {
