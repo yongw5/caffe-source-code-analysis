@@ -1,8 +1,8 @@
 # solver.hpp & solver.cpp
-- Solver Class
-- Solve()
-- Step()
-- Test()
+- [Solver Class](#Solver-Class)
+- [Solve()](#Solve())
+- [Step()](#Step)
+- [Test()](#Test)
   
 ## Solver Class
 类的定义
