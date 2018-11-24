@@ -1,8 +1,7 @@
 # adam_solver
-- Adam Algorithm
-- SGDSolver()定义
-- ComputeUpdateValue
-- <img src="http://latex.codecogs.com/svg.latex?" border="0"/>
+- [Adam Algorithm](#Adam-Algorithm)
+- [SGDSolver()定义](#SGDSolver()定义)
+- [ComputeUpdateValue](#ComputeUpdateValue)
 ## Adam Algorithm  
   Require: <img src="http://latex.codecogs.com/svg.latex?\alpha" border="0"/> learning rate  
   Require: <img src="http://latex.codecogs.com/svg.latex?\beta_1,\beta_2\in[0,1]" border="0"/> Exponential decay rates for the moment estimates  
