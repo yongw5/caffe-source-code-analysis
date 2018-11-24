@@ -1,12 +1,12 @@
 # sgd_solver
-- Stochastic Gradient Descent
-- SGDSolver()定义
-- GetLearningRate
-- ClipGradients
-- ApplyUpdate
-- Normalize
-- Regularize
-- ComputeUpdateValue
+- [Stochastic Gradient Descent](#Stochastic-Gradient-Descent)
+- [SGDSolver()定义](#SGDSolver()定义)
+- [GetLearningRate](#GetLearningRate)
+- [ClipGradients](#ClipGradients)
+- [ApplyUpdate](#ApplyUpdate)
+- [Normalize](#Normalize)
+- [Regularize](#Regularize)
+- [ComputeUpdateValue](#ComputeUpdateValue)
 ## Stochastic Gradient Descent
 - Basic
   - Without Regularization  
