@@ -1,7 +1,7 @@
 # Solver Factory
-- 简单工厂模式
-- `REGISTER_SOLVER_CLASS`宏定义
-- `SolverRegistry`类
+- [简单工厂模式](#简单工厂模式)
+- [`REGISTER_SOLVER_CLASS`宏定义](#`REGISTER_SOLVER_CLASS`宏定义)
+- [`SolverRegistry`类](#`SolverRegistry`类)
   
 ## [简单工厂模式][1]
 - 定义  
